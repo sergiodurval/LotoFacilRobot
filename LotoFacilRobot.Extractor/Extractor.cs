@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LotoFacilRobot.Extractor.Model;
 using LotoFacilRobot.Extractor.Selenium;
 namespace LotoFacilRobot.Extractor
 {

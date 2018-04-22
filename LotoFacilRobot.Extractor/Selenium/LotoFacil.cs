@@ -1,4 +1,4 @@
-﻿using LotoFacilRobot.Extractor.Model;
+﻿using LotoFacilRobot.Domain.Model;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -81,10 +81,10 @@ namespace LotoFacilRobot.Extractor.Selenium
             return Convert.ToDouble(dadosDoConcurso.Text.Split(':')[2].Replace("R$", ""));
         }
 
-        private string GetNumeroConcurso()
+        private int GetNumeroConcurso()
         {
             dadosDoConcurso = driver.FindElement(By.ClassName("game-label-b"));
-            return dadosDoConcurso.Text;
+            return Convert.ToInt32(dadosDoConcurso.Text);
         }
 
         private DateTime GetDataResultado()

@@ -5,3 +5,5 @@ C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\WebDrive
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.pdb
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Extractor.exe
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.exe
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Domain.dll
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Domain.pdb

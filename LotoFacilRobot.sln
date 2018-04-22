@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotoFacilRobot.Extractor", "LotoFacilRobot.Extractor\LotoFacilRobot.Extractor.csproj", "{E6F42B74-8F18-4946-A109-6ED1FDFA3D14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotoFacilRobot.Domain", "LotoFacilRobot.Domain\LotoFacilRobot.Domain.csproj", "{FA494451-9635-4138-A0B5-951B4540FF84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{E6F42B74-8F18-4946-A109-6ED1FDFA3D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6F42B74-8F18-4946-A109-6ED1FDFA3D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6F42B74-8F18-4946-A109-6ED1FDFA3D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA494451-9635-4138-A0B5-951B4540FF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA494451-9635-4138-A0B5-951B4540FF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA494451-9635-4138-A0B5-951B4540FF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA494451-9635-4138-A0B5-951B4540FF84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

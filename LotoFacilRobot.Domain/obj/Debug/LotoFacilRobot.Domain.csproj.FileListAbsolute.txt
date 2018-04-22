@@ -1,0 +1,5 @@
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\bin\Debug\LotoFacilRobot.Domain.dll
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\bin\Debug\LotoFacilRobot.Domain.pdb
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.csprojResolveAssemblyReference.cache
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.dll
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.pdb

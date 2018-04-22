@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LotoFacilRobot.Extractor.Model
 {
-    class ResultadoConcurso
+    class QuantidadeAcertos
     {
         public int IdResultado { get; set; }
         public int IdConcurso { get; set; }

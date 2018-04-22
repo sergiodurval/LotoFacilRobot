@@ -12,13 +12,15 @@ namespace LotoFacilRobot.Extractor.Selenium
 {
     class LotoFacil
     {
-        public string url = @"https://www.gigasena.com.br/loterias/lotofacil/resultados/resultado-lotofacil";
-        public IWebDriver driver;
+        private string url = @"https://www.gigasena.com.br/loterias/lotofacil/resultados/resultado-lotofacil";
+        private IWebDriver driver;
+        IWebElement dadosDoConcurso;
 
         public void CargaInicial()
         {
             Concurso concurso = new Concurso();
             List<int> TodosConcursos2018 = new List<int>();
+            #region TODOS_CONCURSOS_2018
             TodosConcursos2018.Add(1633);
             TodosConcursos2018.Add(1634);
             TodosConcursos2018.Add(1635);
@@ -39,19 +41,56 @@ namespace LotoFacilRobot.Extractor.Selenium
             TodosConcursos2018.Add(1650);
             TodosConcursos2018.Add(1651);
             TodosConcursos2018.Add(1652);
-
+            #endregion
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             url = url + "-1633.htm";
             driver.Navigate().GoToUrl(url);
             Thread.Sleep(1000);
-            IWebElement dadosDoConcurso = driver.FindElement(By.ClassName("game-label-b"));
-            concurso.NumeroConcurso = dadosDoConcurso.Text;
-            dadosDoConcurso = driver.FindElement(By.Id("lotofacil-d"));
-            concurso.DataResultado = Convert.ToDateTime(dadosDoConcurso.Text);
+            concurso.NumeroConcurso = GetNumeroConcurso();
+            concurso.DataResultado = GetDataResultado();
+            concurso.NumerosSorteados = GetNumerosSorteados();
+            concurso.ProximoConcurso = GetDataProximoConcurso();
+            concurso.PremioEstimado = GetPremioEstimado();
             Thread.Sleep(10000);
             driver.Quit();
+        }
 
+        private List<int> GetNumerosSorteados()
+        {
+            List<int> ListaDeNumerosSorteados = new List<int>();
+            IWebElement elementoNumeroSorteado;
+            for (int i = 0; i <= 14; i++)
+            {
+                elementoNumeroSorteado = driver.FindElement(By.Id(string.Format("lotofacil-dz{0}",i)));
+                ListaDeNumerosSorteados.Add(Convert.ToInt32(elementoNumeroSorteado.Text));
+            }
+            return ListaDeNumerosSorteados;
+        }
+
+        private DateTime GetDataProximoConcurso()
+        {
+            dadosDoConcurso = driver.FindElement(By.Id("painel-info"));
+            return Convert.ToDateTime(dadosDoConcurso.Text.Split(':')[1].Substring(0, 11));
+            
+        }
+
+        private double GetPremioEstimado()
+        {
+            dadosDoConcurso = driver.FindElement(By.Id("painel-info"));
+            return Convert.ToDouble(dadosDoConcurso.Text.Split(':')[2].Replace("R$", ""));
+        }
+
+        private string GetNumeroConcurso()
+        {
+            dadosDoConcurso = driver.FindElement(By.ClassName("game-label-b"));
+            return dadosDoConcurso.Text;
+        }
+
+        private DateTime GetDataResultado()
+        {
+            dadosDoConcurso = driver.FindElement(By.Id("lotofacil-d"));
+            return Convert.ToDateTime(dadosDoConcurso.Text);
         }
     }
 }

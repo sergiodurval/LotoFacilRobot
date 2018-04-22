@@ -1,0 +1,7 @@
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.csprojResolveAssemblyReference.cache
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Extractor.pdb
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\WebDriver.dll
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\WebDriver.xml
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.pdb
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Extractor.exe
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.exe

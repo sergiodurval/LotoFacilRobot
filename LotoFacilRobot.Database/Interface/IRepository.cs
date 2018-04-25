@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LotoFacilRobot.Database.Interface
 {
-    interface IRepository<TEntity> : IDisposable where TEntity : class
+    interface IRepository<TEntity> where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
         TEntity GetById();

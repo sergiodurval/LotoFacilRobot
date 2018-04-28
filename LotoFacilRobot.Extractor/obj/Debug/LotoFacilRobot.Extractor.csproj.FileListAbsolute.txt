@@ -7,3 +7,12 @@ C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\LotoFaci
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.exe
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Domain.dll
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Domain.pdb
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.exe
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.pdb
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Extractor.exe
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Extractor.pdb
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Domain.dll
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\bin\Debug\WebDriver.dll
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\bin\Debug\LotoFacilRobot.Domain.pdb
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\bin\Debug\WebDriver.xml
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Extractor\obj\Debug\LotoFacilRobot.Extractor.csprojResolveAssemblyReference.cache

@@ -3,3 +3,8 @@ C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\bin\Debug\LotoFacilRo
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.csprojResolveAssemblyReference.cache
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.dll
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.pdb
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Domain\bin\Debug\LotoFacilRobot.Domain.dll
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Domain\bin\Debug\LotoFacilRobot.Domain.pdb
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.csprojResolveAssemblyReference.cache
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.dll
+C:\Users\SergioDurval\Documents\teste\LotoFacilRobot-master\LotoFacilRobot.Domain\obj\Debug\LotoFacilRobot.Domain.pdb

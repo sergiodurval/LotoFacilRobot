@@ -24,26 +24,9 @@ namespace LotoFacilRobot.Extractor.Selenium
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             #region TODOS_CONCURSOS_2018
-            TodosConcursos2018.Add(1633);
-            TodosConcursos2018.Add(1634);
-            TodosConcursos2018.Add(1635);
-            TodosConcursos2018.Add(1636);
-            TodosConcursos2018.Add(1637);
-            TodosConcursos2018.Add(1638);
-            TodosConcursos2018.Add(1639);
-            TodosConcursos2018.Add(1640);
-            TodosConcursos2018.Add(1641);
-            TodosConcursos2018.Add(1642);
-            TodosConcursos2018.Add(1643);
-            TodosConcursos2018.Add(1644);
-            TodosConcursos2018.Add(1645);
-            TodosConcursos2018.Add(1646);
-            TodosConcursos2018.Add(1647);
-            TodosConcursos2018.Add(1648);
-            TodosConcursos2018.Add(1649);
-            TodosConcursos2018.Add(1650);
-            TodosConcursos2018.Add(1651);
-            TodosConcursos2018.Add(1652);
+            TodosConcursos2018.Add(1653);
+            TodosConcursos2018.Add(1654);
+            TodosConcursos2018.Add(1655);
             #endregion
             foreach (int numeroConcurso in TodosConcursos2018)
             {

@@ -1,0 +1,6 @@
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Database\bin\Debug\LotoFacilRobot.Database.dll.config
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Database\bin\Debug\LotoFacilRobot.Database.dll
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Database\bin\Debug\LotoFacilRobot.Database.pdb
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Database\obj\Debug\LotoFacilRobot.Database.csprojResolveAssemblyReference.cache
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Database\obj\Debug\LotoFacilRobot.Database.dll
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.Database\obj\Debug\LotoFacilRobot.Database.pdb

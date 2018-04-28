@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryCommands.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>

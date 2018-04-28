@@ -71,7 +71,7 @@ namespace LotoFacilRobot.Database
                     command.Append(string.Join("-", Lista));
                     command.Append(",");
                 }
-                else
+                else if(propertyInfo.Name != "IdConcurso")
                 {
                     command.Append(obj.GetType().GetProperty(propertyInfo.Name).GetValue(obj, null));
                     command.Append(",");

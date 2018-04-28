@@ -40,13 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="ConcursoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuantidadeAcertosDAO.cs" />
     <Compile Include="QueryCommands.cs" />
-    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\LotoFacilRobot.Domain\LotoFacilRobot.Domain.csproj">
+      <Project>{fa494451-9635-4138-a0b5-951b4540ff84}</Project>
+      <Name>LotoFacilRobot.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

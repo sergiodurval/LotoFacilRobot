@@ -12,7 +12,7 @@ namespace LotoFacilRobot.Extractor.Selenium
 {
     class LotoFacil
     {
-        private string url = @"https://www.gigasena.com.br/loterias/lotofacil/resultados/resultado-lotofacil";
+        private string url = @"https://www.gigasena.com.br/loterias/lotofacil/resultados/resultado-lotofacil-{0}.htm";
         private IWebDriver driver;
         IWebElement dadosDoConcurso;
         Concurso concurso;
@@ -21,6 +21,8 @@ namespace LotoFacilRobot.Extractor.Selenium
         public void CargaInicial()
         {
             List<int> TodosConcursos2018 = new List<int>();
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
             #region TODOS_CONCURSOS_2018
             TodosConcursos2018.Add(1633);
             TodosConcursos2018.Add(1634);
@@ -43,13 +45,13 @@ namespace LotoFacilRobot.Extractor.Selenium
             TodosConcursos2018.Add(1651);
             TodosConcursos2018.Add(1652);
             #endregion
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            url = url + "-1633.htm";
-            driver.Navigate().GoToUrl(url);
-            Thread.Sleep(1000);
-            PopulateConcurso();
-            PopulateQuantidadeAcertos();
+            foreach (int numeroConcurso in TodosConcursos2018)
+            {
+                driver.Navigate().GoToUrl(string.Format(url,Convert.ToString(numeroConcurso)));
+                Thread.Sleep(1000);
+                PopulateConcurso();
+                PopulateQuantidadeAcertos();
+            }
             Thread.Sleep(10000);
             driver.Quit();
         }

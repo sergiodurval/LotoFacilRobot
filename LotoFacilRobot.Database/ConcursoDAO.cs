@@ -55,11 +55,11 @@ namespace LotoFacilRobot.Database
                     SqlCommand command = new SqlCommand("INSERT INTO concurso(NumeroConcurso,DataResultado,"+
                     "PremioEstimado,NumerosSorteados,ProximoConcurso) values(@NumeroConcurso,@DataResultado,"+
                     "@PremioEstimado,@NumerosSorteados,@ProximoConcurso);SELECT SCOPE_IDENTITY()", conn);
-                    command.Parameters.Add("@NumeroConcurso",concurso.NumeroConcurso);
-                    command.Parameters.Add("@DataResultado",concurso.DataResultado);
-                    command.Parameters.Add("@PremioEstimado",concurso.PremioEstimado);
-                    command.Parameters.Add("@NumerosSorteados",string.Join("-",concurso.NumerosSorteados));
-                    command.Parameters.Add("@ProximoConcurso",concurso.ProximoConcurso);
+                    command.Parameters.AddWithValue("@NumeroConcurso",concurso.NumeroConcurso);
+                    command.Parameters.AddWithValue("@DataResultado",concurso.DataResultado);
+                    command.Parameters.AddWithValue("@PremioEstimado",concurso.PremioEstimado);
+                    command.Parameters.AddWithValue("@NumerosSorteados",string.Join("-",concurso.NumerosSorteados));
+                    command.Parameters.AddWithValue("@ProximoConcurso",concurso.ProximoConcurso);
                     conn.Open();
                     id = Convert.ToInt32(command.ExecuteScalar());
                     conn.Close();
@@ -81,6 +81,30 @@ namespace LotoFacilRobot.Database
                 ListaNumerosSorteados.Add(Convert.ToInt32(i));
             }
             return ListaNumerosSorteados;
+        }
+
+        public int GetNumeroUltimoConcurso()
+        {
+            int ultimoConcurso = 0;
+            try
+            {
+                using (conn = new SqlConnection(strConnection))
+                {
+                    SqlCommand command = new SqlCommand("PR_GET_ULTIMO_NUMERO_CONCURSO", conn);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@NumeroConcurso", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    ultimoConcurso = Convert.ToInt32(command.Parameters["@NumeroConcurso"].Value);
+                    conn.Close();
+                }
+                return ultimoConcurso;
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
+            }
         }
     }
 }

@@ -132,6 +132,8 @@ namespace LotoFacilRobot.Extractor.Selenium
             Thread.Sleep(1000);
             PopulateConcurso();
             PopulateQuantidadeAcertos();
+            Thread.Sleep(1000);
+            driver.Quit();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace LotoFacilRobot.Extractor.Selenium
             #endregion
             foreach (int numeroConcurso in TodosConcursos2018)
             {
-                driver.Navigate().GoToUrl(string.Format(url,Convert.ToString(numeroConcurso)));
+                driver.Navigate().GoToUrl(GetUrlFormatada(numeroConcurso));
                 Thread.Sleep(1000);
                 PopulateConcurso();
                 PopulateQuantidadeAcertos();
@@ -118,5 +118,20 @@ namespace LotoFacilRobot.Extractor.Selenium
             qtdAcertosDAO.InsertQuantidadeAcertos(qtdAcertos);
         }
 
+        public string GetUrlFormatada(int numeroConcurso)
+        {
+            return string.Format(url, Convert.ToString(numeroConcurso));
+        }
+
+        public void ExtrairUltimoConcurso()
+        {
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            int numeroConcurso = new ConcursoDAO().GetNumeroUltimoConcurso();
+            driver.Navigate().GoToUrl(GetUrlFormatada(numeroConcurso));
+            Thread.Sleep(1000);
+            PopulateConcurso();
+            PopulateQuantidadeAcertos();
+        }
     }
 }

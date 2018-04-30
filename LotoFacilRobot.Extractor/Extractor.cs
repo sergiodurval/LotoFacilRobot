@@ -14,7 +14,10 @@ namespace LotoFacilRobot.Extractor
         public static void Main()
         {
             LotoFacil LotoFacil = new LotoFacil();
-            LotoFacil.CargaInicial();
+            Console.WriteLine("Inicio extracao: " + DateTime.Now);
+            LotoFacil.ExtrairUltimoConcurso();
+            Console.WriteLine("Fim extracao: " + DateTime.Now);
+            Console.ReadKey();
         }
     }
 }

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConcursoDAO.cs" />
+    <Compile Include="NumerosFavoritosDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuantidadeAcertosDAO.cs" />
     <Compile Include="QueryCommands.cs" />

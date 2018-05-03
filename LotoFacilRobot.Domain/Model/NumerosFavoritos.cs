@@ -9,7 +9,7 @@ namespace LotoFacilRobot.Domain.Model
     public class NumerosFavoritos
     {
         public int Id { get; set; }
-        public List<int> NumerosFavoritos { get; set; }
+        public List<int> ListaNumerosFavoritos { get; set; }
         public bool Ativo { get; set; }
     }
 }

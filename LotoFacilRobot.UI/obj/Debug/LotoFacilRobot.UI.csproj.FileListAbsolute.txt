@@ -1,0 +1,9 @@
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\bin\Debug\LotoFacilRobot.UI.exe.config
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\bin\Debug\LotoFacilRobot.UI.exe
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\bin\Debug\LotoFacilRobot.UI.pdb
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.csprojResolveAssemblyReference.cache
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.frmMainMenu.resources
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.Properties.Resources.resources
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.csproj.GenerateResource.Cache
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.exe
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.pdb

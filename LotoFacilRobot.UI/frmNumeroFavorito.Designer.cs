@@ -55,12 +55,12 @@
             this.lblDois = new System.Windows.Forms.Label();
             this.lblUm = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbnDezoito = new System.Windows.Forms.RadioButton();
+            this.rbnDezessete = new System.Windows.Forms.RadioButton();
+            this.rbnDezesseis = new System.Windows.Forms.RadioButton();
+            this.rbnQuinze = new System.Windows.Forms.RadioButton();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dgvNumerosFavoritos = new System.Windows.Forms.DataGridView();
-            this.rbnQuinze = new System.Windows.Forms.RadioButton();
-            this.rbnDezesseis = new System.Windows.Forms.RadioButton();
-            this.rbnDezessete = new System.Windows.Forms.RadioButton();
-            this.rbnDezoito = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNumerosFavoritos)).BeginInit();
@@ -440,46 +440,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quantos numeros está marcando no jogo";
             // 
-            // btnCadastrar
+            // rbnDezoito
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(118, 318);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(224, 23);
-            this.btnCadastrar.TabIndex = 2;
-            this.btnCadastrar.Text = "Cadastrar jogo";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            // 
-            // dgvNumerosFavoritos
-            // 
-            this.dgvNumerosFavoritos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNumerosFavoritos.Location = new System.Drawing.Point(12, 362);
-            this.dgvNumerosFavoritos.Name = "dgvNumerosFavoritos";
-            this.dgvNumerosFavoritos.Size = new System.Drawing.Size(502, 203);
-            this.dgvNumerosFavoritos.TabIndex = 3;
-            // 
-            // rbnQuinze
-            // 
-            this.rbnQuinze.AutoSize = true;
-            this.rbnQuinze.Location = new System.Drawing.Point(6, 19);
-            this.rbnQuinze.Name = "rbnQuinze";
-            this.rbnQuinze.Size = new System.Drawing.Size(37, 17);
-            this.rbnQuinze.TabIndex = 0;
-            this.rbnQuinze.TabStop = true;
-            this.rbnQuinze.Text = "15";
-            this.rbnQuinze.UseVisualStyleBackColor = true;
-            this.rbnQuinze.Click += new System.EventHandler(this.rbnQuinze_Click);
-            // 
-            // rbnDezesseis
-            // 
-            this.rbnDezesseis.AutoSize = true;
-            this.rbnDezesseis.Location = new System.Drawing.Point(48, 19);
-            this.rbnDezesseis.Name = "rbnDezesseis";
-            this.rbnDezesseis.Size = new System.Drawing.Size(37, 17);
-            this.rbnDezesseis.TabIndex = 1;
-            this.rbnDezesseis.TabStop = true;
-            this.rbnDezesseis.Text = "16";
-            this.rbnDezesseis.UseVisualStyleBackColor = true;
-            this.rbnDezesseis.Click += new System.EventHandler(this.rbnDezesseis_Click);
+            this.rbnDezoito.AutoSize = true;
+            this.rbnDezoito.Location = new System.Drawing.Point(134, 19);
+            this.rbnDezoito.Name = "rbnDezoito";
+            this.rbnDezoito.Size = new System.Drawing.Size(37, 17);
+            this.rbnDezoito.TabIndex = 3;
+            this.rbnDezoito.TabStop = true;
+            this.rbnDezoito.Text = "18";
+            this.rbnDezoito.UseVisualStyleBackColor = true;
+            this.rbnDezoito.CheckedChanged += new System.EventHandler(this.rbnDezoito_CheckedChanged);
             // 
             // rbnDezessete
             // 
@@ -493,17 +464,50 @@
             this.rbnDezessete.UseVisualStyleBackColor = true;
             this.rbnDezessete.Click += new System.EventHandler(this.rbnDezessete_Click);
             // 
-            // rbnDezoito
+            // rbnDezesseis
             // 
-            this.rbnDezoito.AutoSize = true;
-            this.rbnDezoito.Location = new System.Drawing.Point(134, 19);
-            this.rbnDezoito.Name = "rbnDezoito";
-            this.rbnDezoito.Size = new System.Drawing.Size(37, 17);
-            this.rbnDezoito.TabIndex = 3;
-            this.rbnDezoito.TabStop = true;
-            this.rbnDezoito.Text = "18";
-            this.rbnDezoito.UseVisualStyleBackColor = true;
-            this.rbnDezoito.CheckedChanged += new System.EventHandler(this.rbnDezoito_CheckedChanged);
+            this.rbnDezesseis.AutoSize = true;
+            this.rbnDezesseis.Location = new System.Drawing.Point(48, 19);
+            this.rbnDezesseis.Name = "rbnDezesseis";
+            this.rbnDezesseis.Size = new System.Drawing.Size(37, 17);
+            this.rbnDezesseis.TabIndex = 1;
+            this.rbnDezesseis.TabStop = true;
+            this.rbnDezesseis.Text = "16";
+            this.rbnDezesseis.UseVisualStyleBackColor = true;
+            this.rbnDezesseis.Click += new System.EventHandler(this.rbnDezesseis_Click);
+            // 
+            // rbnQuinze
+            // 
+            this.rbnQuinze.AutoSize = true;
+            this.rbnQuinze.Location = new System.Drawing.Point(6, 19);
+            this.rbnQuinze.Name = "rbnQuinze";
+            this.rbnQuinze.Size = new System.Drawing.Size(37, 17);
+            this.rbnQuinze.TabIndex = 0;
+            this.rbnQuinze.TabStop = true;
+            this.rbnQuinze.Text = "15";
+            this.rbnQuinze.UseVisualStyleBackColor = true;
+            this.rbnQuinze.Click += new System.EventHandler(this.rbnQuinze_Click);
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(118, 318);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(224, 23);
+            this.btnCadastrar.TabIndex = 2;
+            this.btnCadastrar.Text = "Cadastrar jogo";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // dgvNumerosFavoritos
+            // 
+            this.dgvNumerosFavoritos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNumerosFavoritos.Location = new System.Drawing.Point(12, 362);
+            this.dgvNumerosFavoritos.MultiSelect = false;
+            this.dgvNumerosFavoritos.Name = "dgvNumerosFavoritos";
+            this.dgvNumerosFavoritos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNumerosFavoritos.Size = new System.Drawing.Size(502, 203);
+            this.dgvNumerosFavoritos.TabIndex = 3;
+            this.dgvNumerosFavoritos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvNumerosFavoritos_MouseClick);
             // 
             // frmNumeroFavorito
             // 
@@ -517,6 +521,7 @@
             this.Name = "frmNumeroFavorito";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro teimosinha";
+            this.Load += new System.EventHandler(this.frmNumeroFavorito_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

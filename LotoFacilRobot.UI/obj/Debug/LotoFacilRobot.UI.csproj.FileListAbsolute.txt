@@ -8,3 +8,7 @@ C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.exe
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.pdb
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.frmNumeroFavorito.resources
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\bin\Debug\LotoFacilRobot.Database.dll
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\bin\Debug\LotoFacilRobot.Domain.dll
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\bin\Debug\LotoFacilRobot.Database.pdb
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\bin\Debug\LotoFacilRobot.Domain.pdb

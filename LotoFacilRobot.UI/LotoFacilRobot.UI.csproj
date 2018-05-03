@@ -86,6 +86,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LotoFacilRobot.Database\LotoFacilRobot.Database.csproj">
+      <Project>{a3c0dc6b-a9a1-471d-b54a-2ebaa4e145ed}</Project>
+      <Name>LotoFacilRobot.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LotoFacilRobot.Domain\LotoFacilRobot.Domain.csproj">
+      <Project>{fa494451-9635-4138-a0b5-951b4540ff84}</Project>
+      <Name>LotoFacilRobot.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

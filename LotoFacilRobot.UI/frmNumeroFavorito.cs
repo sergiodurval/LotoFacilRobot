@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LotoFacilRobot.Database;
+using LotoFacilRobot.Domain.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -198,6 +200,97 @@ namespace LotoFacilRobot.UI
             }
             return true;
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            NumerosFavoritos numerosFavoritos = new NumerosFavoritos();
+            numerosFavoritos.ListaNumerosFavoritos = GetNumerosFavoritos();
+            if (numerosFavoritos.ListaNumerosFavoritos.Count != qtdNumeros)
+            {
+                MessageBox.Show(string.Format("Você deve selecionar no minimo {0} números",qtdNumeros));
+                return;
+            }
+            else
+            {
+                numerosFavoritos.Ativo = true;
+                NumerosFavoritosDAO dao = new NumerosFavoritosDAO();
+                dao.InsertNumerosFavoritos(numerosFavoritos);
+                MessageBox.Show("Teimosinha criada com sucesso");
+                GetAllNumerosFavoritos();
+            }
+            
+        }
+
+        public List<int> GetNumerosFavoritos()
+        {
+            List<int> listaNumerosFavoritos = new List<int>();
+            foreach (Control ctrl in groupBox1.Controls)
+            {
+                if(ctrl.GetType() == typeof(System.Windows.Forms.Label))
+                {
+                    if (ctrl.BackColor == System.Drawing.Color.Green)
+                    {
+                        listaNumerosFavoritos.Add(Convert.ToInt32(ctrl.Text));
+                    }
+                }
+            }
+            return listaNumerosFavoritos;
+        }
+
+        public void GetAllNumerosFavoritos()
+        {
+            dgvNumerosFavoritos.DataSource = new NumerosFavoritosDAO().GetAllNumerosFavoritos();
+        }
+
+        private void frmNumeroFavorito_Load(object sender, EventArgs e)
+        {
+            GetAllNumerosFavoritos();
+        }
+
+        private void dgvNumerosFavoritos_MouseClick(object sender, MouseEventArgs e)
+        {
+            string numeros = string.Empty;
+            numeros = dgvNumerosFavoritos.SelectedRows[0].Cells[1].Value.ToString();
+            FillNumbersInPanel(PopulateNumerosSorteados(numeros));
+        }
+
+        public void FillNumbersInPanel(List<int> numeros)
+        {
+            SetAllLabelToWhite();
+            foreach (int n in numeros)
+            {
+                foreach (Control ctrl in groupBox1.Controls)
+                {
+                    if (ctrl.GetType() == typeof(Label))
+                    {
+                        if (Convert.ToInt32(ctrl.Text) == n)
+                        {
+                            ctrl.BackColor = System.Drawing.Color.Green;
+                            break;
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        public List<int> PopulateNumerosSorteados(string numeros)
+        {
+            List<int> ListaNumeros = numeros.Split('-').Select(Int32.Parse).ToList();
+            return ListaNumeros;
+        }
+
+        public void SetAllLabelToWhite()
+        {
+            foreach (Control ctrl in groupBox1.Controls)
+            {
+                if (ctrl.GetType() == typeof(Label))
+                {
+                    ctrl.BackColor = System.Drawing.Color.White;
+                }
+            }
+        }
+        
        
     }
 }

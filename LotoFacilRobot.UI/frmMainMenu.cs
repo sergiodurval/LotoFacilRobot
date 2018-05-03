@@ -16,5 +16,12 @@ namespace LotoFacilRobot.UI
         {
             InitializeComponent();
         }
+
+        private void cadastrarTeimosinhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNumeroFavorito frmNumeroFavorito = new frmNumeroFavorito();
+            frmNumeroFavorito.MdiParent = this;
+            frmNumeroFavorito.Show();
+        }
     }
 }

@@ -59,8 +59,9 @@
             // cadastrarTeimosinhaToolStripMenuItem
             // 
             this.cadastrarTeimosinhaToolStripMenuItem.Name = "cadastrarTeimosinhaToolStripMenuItem";
-            this.cadastrarTeimosinhaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.cadastrarTeimosinhaToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.cadastrarTeimosinhaToolStripMenuItem.Text = "Cadastrar teimosinha";
+            this.cadastrarTeimosinhaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarTeimosinhaToolStripMenuItem_Click);
             // 
             // concursoPassadosToolStripMenuItem
             // 

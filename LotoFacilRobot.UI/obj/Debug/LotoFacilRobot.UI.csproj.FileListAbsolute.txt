@@ -7,3 +7,4 @@ C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.csproj.GenerateResource.Cache
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.exe
 C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.pdb
+C:\Users\SergioDurval\LotoFacilRobot\LotoFacilRobot.UI\obj\Debug\LotoFacilRobot.UI.frmNumeroFavorito.resources

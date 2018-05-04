@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConferenciaJogos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConferenciaJogos.Designer.cs">
+      <DependentUpon>frmConferenciaJogos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmConferenciaJogos.resx">
+      <DependentUpon>frmConferenciaJogos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>

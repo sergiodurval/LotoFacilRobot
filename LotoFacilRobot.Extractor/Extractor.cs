@@ -13,11 +13,37 @@ namespace LotoFacilRobot.Extractor
     {
         public static void Main()
         {
-            LotoFacil LotoFacil = new LotoFacil();
-            Console.WriteLine("Inicio extracao: " + DateTime.Now);
-            LotoFacil.ExtrairUltimoConcurso();
-            Console.WriteLine("Fim extracao: " + DateTime.Now);
-            Console.ReadKey();
+            if (ValidaDiaSemana())
+            {
+                try
+                {
+                    LotoFacil LotoFacil = new LotoFacil();
+                    Console.WriteLine("Inicio extracao: " + DateTime.Now);
+                    LotoFacil.ExtrairUltimoConcurso();
+                    Console.WriteLine("Fim extracao: " + DateTime.Now);
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("Ocorreu o seguinte erro: " + ex.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Método que valida qual o dia da semana(os jogos são realizados somente seg,quar,sex
+        /// </summary>
+        /// <returns>Retorna true caso seja segunda,quarta ou sexta</returns>
+        public static bool ValidaDiaSemana()
+        {
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Monday || DateTime.Now.DayOfWeek == DayOfWeek.Wednesday || DateTime.Now.DayOfWeek == DayOfWeek.Friday)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

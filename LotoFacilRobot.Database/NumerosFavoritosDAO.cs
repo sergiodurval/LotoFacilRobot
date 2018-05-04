@@ -58,5 +58,32 @@ namespace LotoFacilRobot.Database
                 throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
             }
         }
+
+        public List<int> GetAllNumerosFavoritosInList()
+        {
+            List<int> numerosFavoritos = new List<int>();
+            try
+            {
+                using (conn = new SqlConnection(strConnection))
+                {
+                    SqlCommand command = new SqlCommand("PR_GET_ALL_NUMEROS_FAVORITOS", conn);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    conn.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        numerosFavoritos = reader["NumerosFavoritos"].ToString().Split('-').Select(Int32.Parse).ToList();
+                    }
+                    command.Dispose();
+                    reader.Dispose();
+                    return numerosFavoritos;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LotoFacilRobot.Domain.Model;
 using System.Data.SqlClient;
+using System.Data;
 namespace LotoFacilRobot.Database
 {
     public class ConcursoDAO
@@ -83,14 +84,14 @@ namespace LotoFacilRobot.Database
             return ListaNumerosSorteados;
         }
 
-        public int GetNumeroUltimoConcurso()
+        public int GetNumeroUltimoConcursoExtracao()
         {
             int ultimoConcurso = 0;
             try
             {
                 using (conn = new SqlConnection(strConnection))
                 {
-                    SqlCommand command = new SqlCommand("PR_GET_ULTIMO_NUMERO_CONCURSO", conn);
+                    SqlCommand command = new SqlCommand("PR_GET_NUMEROCONCURSO_EXTRAIDO", conn);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@NumeroConcurso", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
                     conn.Open();
@@ -99,6 +100,84 @@ namespace LotoFacilRobot.Database
                     conn.Close();
                 }
                 return ultimoConcurso;
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
+            }
+        }
+
+        public DataTable GetConcursos()
+        {
+            try
+            {
+                using (conn = new SqlConnection(strConnection))
+                {
+                    SqlCommand command = new SqlCommand("PR_GET_ALL_CONCURSOS", conn);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(command);
+                    conn.Open();
+                    da.Fill(dt);
+                    command.Dispose();
+                    da.Dispose();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
+            }
+        }
+
+        public List<int> GetResultadoConcursoByNumeroConcurso(int numeroConcurso)
+        {
+            List<int> listaNumerosSorteados = new List<int>();
+            try
+            {
+                using (conn = new SqlConnection(strConnection))
+                {
+                    SqlCommand command = new SqlCommand("PR_GET_CONCURSO_BY_NUMEROCONCURSO", conn);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@NumeroConcurso", numeroConcurso);
+                    conn.Open();
+                    SqlDataReader dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        listaNumerosSorteados = dr["NumerosSorteados"].ToString().Split('-').Select(Int32.Parse).ToList();
+                    }
+                    command.Dispose();
+                    return listaNumerosSorteados;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
+            }
+        }
+
+        public int GetNumeroUltimoConcurso()
+        {
+            int numeroConcurso = 0;
+            try
+            {
+                using (conn = new SqlConnection(strConnection))
+                {
+                    SqlCommand command = new SqlCommand("PR_GET_ULTIMO_CONCURSO", conn);
+                    command.CommandType = CommandType.StoredProcedure;
+                    conn.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        numeroConcurso = Convert.ToInt32(reader["NumeroConcurso"]);
+                    }
+                    conn.Close();
+                    command.Dispose();
+                    return numeroConcurso;
+                }
             }
             catch (Exception ex)
             {

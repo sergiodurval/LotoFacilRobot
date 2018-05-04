@@ -23,5 +23,12 @@ namespace LotoFacilRobot.UI
             frmNumeroFavorito.MdiParent = this;
             frmNumeroFavorito.Show();
         }
+
+        private void conferênciaDoJogoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConferenciaJogos frmConferenciaJogos = new frmConferenciaJogos();
+            frmConferenciaJogos.MdiParent = this;
+            frmConferenciaJogos.Show();
+        }
     }
 }

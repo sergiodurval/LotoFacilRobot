@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblConcursos = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblQuantidadeAcertos = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblVinteCinco = new System.Windows.Forms.Label();
             this.lblVinteQuatro = new System.Windows.Forms.Label();
@@ -57,7 +56,8 @@
             this.lblTres = new System.Windows.Forms.Label();
             this.lblDois = new System.Windows.Forms.Label();
             this.lblUm = new System.Windows.Forms.Label();
-            this.lblQuantidadeAcertos = new System.Windows.Forms.Label();
+            this.cboConcursos = new System.Windows.Forms.ComboBox();
+            this.lblConcursos = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             // 
             this.groupBox1.Controls.Add(this.lblQuantidadeAcertos);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboConcursos);
             this.groupBox1.Controls.Add(this.lblConcursos);
             this.groupBox1.Location = new System.Drawing.Point(44, 23);
             this.groupBox1.Name = "groupBox1";
@@ -75,22 +75,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Concursos";
             // 
-            // lblConcursos
+            // lblQuantidadeAcertos
             // 
-            this.lblConcursos.AutoSize = true;
-            this.lblConcursos.Location = new System.Drawing.Point(6, 27);
-            this.lblConcursos.Name = "lblConcursos";
-            this.lblConcursos.Size = new System.Drawing.Size(125, 13);
-            this.lblConcursos.TabIndex = 1;
-            this.lblConcursos.Text = "Números dos Concursos:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.lblQuantidadeAcertos.AutoSize = true;
+            this.lblQuantidadeAcertos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantidadeAcertos.Location = new System.Drawing.Point(56, 64);
+            this.lblQuantidadeAcertos.Name = "lblQuantidadeAcertos";
+            this.lblQuantidadeAcertos.Size = new System.Drawing.Size(121, 20);
+            this.lblQuantidadeAcertos.TabIndex = 4;
+            this.lblQuantidadeAcertos.Text = "Você acertou:";
             // 
             // groupBox2
             // 
@@ -428,15 +421,24 @@
             this.lblUm.Text = "1";
             this.lblUm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblQuantidadeAcertos
+            // cboConcursos
             // 
-            this.lblQuantidadeAcertos.AutoSize = true;
-            this.lblQuantidadeAcertos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantidadeAcertos.Location = new System.Drawing.Point(56, 64);
-            this.lblQuantidadeAcertos.Name = "lblQuantidadeAcertos";
-            this.lblQuantidadeAcertos.Size = new System.Drawing.Size(121, 20);
-            this.lblQuantidadeAcertos.TabIndex = 4;
-            this.lblQuantidadeAcertos.Text = "Você acertou:";
+            this.cboConcursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboConcursos.FormattingEnabled = true;
+            this.cboConcursos.Location = new System.Drawing.Point(137, 24);
+            this.cboConcursos.Name = "cboConcursos";
+            this.cboConcursos.Size = new System.Drawing.Size(121, 21);
+            this.cboConcursos.TabIndex = 2;
+            this.cboConcursos.SelectedValueChanged += new System.EventHandler(this.cboConcursos_SelectedValueChanged);
+            // 
+            // lblConcursos
+            // 
+            this.lblConcursos.AutoSize = true;
+            this.lblConcursos.Location = new System.Drawing.Point(6, 27);
+            this.lblConcursos.Name = "lblConcursos";
+            this.lblConcursos.Size = new System.Drawing.Size(125, 13);
+            this.lblConcursos.TabIndex = 1;
+            this.lblConcursos.Text = "Números dos Concursos:";
             // 
             // frmConferenciaJogos
             // 
@@ -445,7 +447,9 @@
             this.ClientSize = new System.Drawing.Size(478, 453);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmConferenciaJogos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conferencia Jogos";
+            this.Load += new System.EventHandler(this.frmConferenciaJogos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -457,7 +461,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboConcursos;
         private System.Windows.Forms.Label lblConcursos;
         private System.Windows.Forms.Label lblQuantidadeAcertos;
         private System.Windows.Forms.GroupBox groupBox2;

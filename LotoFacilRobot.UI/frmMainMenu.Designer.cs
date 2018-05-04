@@ -74,6 +74,7 @@
             this.conferênciaDoJogoToolStripMenuItem.Name = "conferênciaDoJogoToolStripMenuItem";
             this.conferênciaDoJogoToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.conferênciaDoJogoToolStripMenuItem.Text = "Conferências do jogos";
+            this.conferênciaDoJogoToolStripMenuItem.Click += new System.EventHandler(this.conferênciaDoJogoToolStripMenuItem_Click);
             // 
             // frmMainMenu
             // 

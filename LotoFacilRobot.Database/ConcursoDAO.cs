@@ -54,16 +54,18 @@ namespace LotoFacilRobot.Database
             {
                 using (conn = new SqlConnection(strConnection))
                 {
-                    SqlCommand command = new SqlCommand("INSERT INTO concurso(NumeroConcurso,DataResultado,"+
-                    "PremioEstimado,NumerosSorteados,ProximoConcurso) values(@NumeroConcurso,@DataResultado,"+
-                    "@PremioEstimado,@NumerosSorteados,@ProximoConcurso);SELECT SCOPE_IDENTITY()", conn);
+                    SqlCommand command = new SqlCommand("PR_INSERT_CONCURSO", conn);
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@NumeroConcurso",concurso.NumeroConcurso);
                     command.Parameters.AddWithValue("@DataResultado",concurso.DataResultado);
                     command.Parameters.AddWithValue("@PremioEstimado",concurso.PremioEstimado);
                     command.Parameters.AddWithValue("@NumerosSorteados",string.Join("-",concurso.NumerosSorteados));
                     command.Parameters.AddWithValue("@ProximoConcurso",concurso.ProximoConcurso);
+                    command.Parameters.AddWithValue("@IdConcursoGerado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     conn.Open();
-                    id = Convert.ToInt32(command.ExecuteScalar());
+                    command.ExecuteNonQuery();
+                    id = Convert.ToInt32(command.Parameters["@IdConcursoGerado"].Value);
+                    command.Dispose();
                     conn.Close();
                     return id;
                 }

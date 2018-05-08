@@ -173,7 +173,7 @@ namespace LotoFacilRobot.Extractor.Selenium
         /// </summary>
         public void ExtrairUltimoConcurso()
         {
-            if (ValidaHorarioExecucao())
+            if (ValidaHorarioExecucao() && ValidaUltimaExtracaoExecutada())
             {
                 driver = new ChromeDriver();
                 driver.Manage().Window.Maximize();
@@ -187,7 +187,7 @@ namespace LotoFacilRobot.Extractor.Selenium
             }
             else
             {
-                throw new Exception("O sorteio é realizado das 20h em diante");
+                throw new Exception("O sorteio é realizado das 20h em diante ou já foi extraido");
             }
         }
 
@@ -204,6 +204,25 @@ namespace LotoFacilRobot.Extractor.Selenium
             else
             {
                 return true;
+            }
+        }
+
+        /// <summary>
+        /// Valida se já foi executado a extração do último concurso
+        /// </summary>
+        /// <returns></returns>
+        public bool ValidaUltimaExtracaoExecutada()
+        {
+            List<Concurso> ListaConcurso = new ConcursoDAO().GetAll();
+            int numeroConcurso = new ConcursoDAO().GetNumeroUltimoConcursoExtracao();
+            Concurso concurso = ListaConcurso.Where(x => x.NumeroConcurso == numeroConcurso).FirstOrDefault();
+            if (concurso == null)
+            {
+                return true;//ainda não foi extraido
+            }
+            else
+            {
+                return false;//já foi extraido
             }
         }
     }

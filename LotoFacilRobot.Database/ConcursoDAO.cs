@@ -21,7 +21,8 @@ namespace LotoFacilRobot.Database
                 List<Concurso> ListaConcursos = new List<Concurso>();
                 using(conn = new SqlConnection(strConnection))
                 {
-                    SqlCommand command = new SqlCommand("SELECT * FROM concurso", conn);
+                    SqlCommand command = new SqlCommand("PR_GET_ALL_CONCURSOS", conn);
+                    command.CommandType = CommandType.StoredProcedure;
                     conn.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())

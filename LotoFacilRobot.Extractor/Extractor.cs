@@ -21,6 +21,7 @@ namespace LotoFacilRobot.Extractor
                     Console.WriteLine("Inicio extracao: " + DateTime.Now);
                     LotoFacil.ExtrairUltimoConcurso();
                     Console.WriteLine("Fim extracao: " + DateTime.Now);
+                    Environment.Exit(0);
                 }
                 catch (Exception ex)
                 {

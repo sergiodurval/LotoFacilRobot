@@ -225,5 +225,21 @@ namespace LotoFacilRobot.Extractor.Selenium
                 return false;//já foi extraido
             }
         }
+
+        /// <summary>
+        /// Extrai concurso qualquer passando o número do concurso
+        /// </summary>
+        /// <param name="numeroConcurso"></param>
+        public void ExtraiConcursoByNumeroConcurso(int numeroConcurso)
+        {
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            driver.Navigate().GoToUrl(GetUrlFormatada(numeroConcurso));
+            Thread.Sleep(1000);
+            PopulateConcurso();
+            PopulateQuantidadeAcertos();
+            Thread.Sleep(1000);
+            driver.Close();
+        }
     }
 }

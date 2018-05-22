@@ -89,17 +89,20 @@ namespace LotoFacilRobot.UI
         {
             List<int> listaResultadoConcurso = new ConcursoDAO().GetResultadoConcursoByNumeroConcurso(numeroConcurso);
             int quantidadeAcertos = 0;
-           
+            StringBuilder strNumerosAcertos = new StringBuilder();
             
             foreach(int num in listaResultadoConcurso)
             {
                 if (numerosFavoritos.IndexOf(num) != -1)
                 {
                     quantidadeAcertos++;
+                    strNumerosAcertos.Append(num + "-");
                 }
             }
             lblQuantidadeAcertos.Text = string.Empty;
             lblQuantidadeAcertos.Text = "Você acertou: " + quantidadeAcertos.ToString();
+            strNumerosAcertos.Remove(strNumerosAcertos.Length - 1, 1);
+            lblNumerosSorteados.Text = "Números acertados: " + strNumerosAcertos;
         }
 
         private void cboConcursos_SelectedValueChanged(object sender, EventArgs e)

@@ -58,19 +58,21 @@
             this.lblUm = new System.Windows.Forms.Label();
             this.cboConcursos = new System.Windows.Forms.ComboBox();
             this.lblConcursos = new System.Windows.Forms.Label();
+            this.lblNumerosSorteados = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblNumerosSorteados);
             this.groupBox1.Controls.Add(this.lblQuantidadeAcertos);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.cboConcursos);
             this.groupBox1.Controls.Add(this.lblConcursos);
             this.groupBox1.Location = new System.Drawing.Point(44, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(393, 362);
+            this.groupBox1.Size = new System.Drawing.Size(393, 422);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Concursos";
@@ -117,7 +119,7 @@
             this.groupBox2.Size = new System.Drawing.Size(224, 241);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Numeros";
+            this.groupBox2.Text = "Numeros sorteados";
             // 
             // lblVinteCinco
             // 
@@ -440,11 +442,21 @@
             this.lblConcursos.TabIndex = 1;
             this.lblConcursos.Text = "Números dos Concursos:";
             // 
+            // lblNumerosSorteados
+            // 
+            this.lblNumerosSorteados.AutoSize = true;
+            this.lblNumerosSorteados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumerosSorteados.Location = new System.Drawing.Point(6, 371);
+            this.lblNumerosSorteados.Name = "lblNumerosSorteados";
+            this.lblNumerosSorteados.Size = new System.Drawing.Size(148, 16);
+            this.lblNumerosSorteados.TabIndex = 1;
+            this.lblNumerosSorteados.Text = "Números acertados:";
+            // 
             // frmConferenciaJogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 453);
+            this.ClientSize = new System.Drawing.Size(478, 459);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmConferenciaJogos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -490,5 +502,6 @@
         private System.Windows.Forms.Label lblTres;
         private System.Windows.Forms.Label lblDois;
         private System.Windows.Forms.Label lblUm;
+        private System.Windows.Forms.Label lblNumerosSorteados;
     }
 }

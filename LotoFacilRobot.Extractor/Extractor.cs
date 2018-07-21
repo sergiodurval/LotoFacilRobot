@@ -15,19 +15,11 @@ namespace LotoFacilRobot.Extractor
         {
             if (ValidaDiaSemana())
             {
-                try
-                {
-                    LotoFacil LotoFacil = new LotoFacil();
-                    Console.WriteLine("Inicio extracao: " + DateTime.Now);
-                    LotoFacil.ExtrairUltimoConcurso();
-                    Console.WriteLine("Fim extracao: " + DateTime.Now);
-                    Environment.Exit(0);
-                }
-                catch (Exception ex)
-                {
-
-                    Console.WriteLine("Ocorreu o seguinte erro: " + ex.Message);
-                }
+                ExtrairConcurso();
+            }
+            else
+            {
+                ExtraiConcursosPendentes();
             }
         }
 
@@ -44,6 +36,51 @@ namespace LotoFacilRobot.Extractor
             else
             {
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Realiza a extração do concuso
+        /// </summary>
+        public static void ExtrairConcurso()
+        {
+            try
+            {
+                LotoFacil LotoFacil = new LotoFacil();
+                Console.WriteLine("Inicio extracao: " + DateTime.Now);
+                LotoFacil.ExtrairUltimoConcurso();
+                Console.WriteLine("Fim extracao: " + DateTime.Now);
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Ocorreu o seguinte erro: " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Extrai concursos pendentes que ainda não foram extraidos
+        /// </summary>
+        public static void ExtraiConcursosPendentes()
+        {
+            try
+            {
+                LotoFacil lotoFacil = new LotoFacil();
+                if (lotoFacil.ValidaUltimaExtracaoExecutada())
+                {
+                    int numeroConcurso = lotoFacil.ObterUltimoNumeroConcurso();
+                    Console.WriteLine("Extracao de concursos pendentes!");
+                    Console.WriteLine("Inicio extracao: " + DateTime.Now);
+                    lotoFacil.ExtraiConcursoByNumeroConcurso(numeroConcurso);
+                    Console.WriteLine("Fim extracao: " + DateTime.Now);
+                    Environment.Exit(0);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Ocorreu o seguinte erro: " + ex.Message);
             }
         }
     }

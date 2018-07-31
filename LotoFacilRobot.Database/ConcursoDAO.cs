@@ -80,11 +80,9 @@ namespace LotoFacilRobot.Database
         public List<int> PopulateNumerosSorteados(string numeros)
         {
             List<int> ListaNumerosSorteados = new List<int>();
-            for (int i = 0; i <= numeros.Length; i++)
-            {
-                ListaNumerosSorteados.Add(Convert.ToInt32(i));
-            }
+            ListaNumerosSorteados = numeros.Split('-').Select(Int32.Parse).ToList();
             return ListaNumerosSorteados;
+           
         }
 
         public int GetNumeroUltimoConcursoExtracao()

@@ -30,5 +30,12 @@ namespace LotoFacilRobot.UI
             frmConferenciaJogos.MdiParent = this;
             frmConferenciaJogos.Show();
         }
+
+        private void concursoPassadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstatistica frmEstatistica = new frmEstatistica();
+            frmEstatistica.MdiParent = this;
+            frmEstatistica.Show();
+        }
     }
 }

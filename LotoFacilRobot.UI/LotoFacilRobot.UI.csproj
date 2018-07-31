@@ -50,6 +50,12 @@
     <Compile Include="frmConferenciaJogos.Designer.cs">
       <DependentUpon>frmConferenciaJogos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEstatistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstatistica.Designer.cs">
+      <DependentUpon>frmEstatistica.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmConferenciaJogos.resx">
       <DependentUpon>frmConferenciaJogos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstatistica.resx">
+      <DependentUpon>frmEstatistica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>

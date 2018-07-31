@@ -67,7 +67,7 @@
             // 
             this.concursoPassadosToolStripMenuItem.Name = "concursoPassadosToolStripMenuItem";
             this.concursoPassadosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.concursoPassadosToolStripMenuItem.Text = "Concursos passados";
+            this.concursoPassadosToolStripMenuItem.Text = "Estatística";
             // 
             // conferênciaDoJogoToolStripMenuItem
             // 

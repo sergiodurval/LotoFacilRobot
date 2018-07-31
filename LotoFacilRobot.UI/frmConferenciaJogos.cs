@@ -13,7 +13,7 @@ namespace LotoFacilRobot.UI
 {
     public partial class frmConferenciaJogos : Form
     {
-        public int numeroConcurso { get; set; }
+        private int numeroConcurso { get; set; }
         
 
         public frmConferenciaJogos()
@@ -21,25 +21,25 @@ namespace LotoFacilRobot.UI
             InitializeComponent();
         }
 
-        public void PopulateConcurso()
+        private void PopulateConcurso()
         {
             cboConcursos.DataSource = new ConcursoDAO().GetConcursos();
             cboConcursos.DisplayMember = "NumeroConcurso";
             cboConcursos.ValueMember = "IdConcurso";
         }
 
-        public List<int> GetResultadoConcursoByNumeroConcurso(int numeroConcurso)
+        private List<int> GetResultadoConcursoByNumeroConcurso(int numeroConcurso)
         {
             List<int> listaNumerosSorteados = new ConcursoDAO().GetResultadoConcursoByNumeroConcurso(numeroConcurso);
             return listaNumerosSorteados;
         }
 
-        public void FillNumerosSorteados(List<int> listaNumerosSorteados)
+        private void FillNumerosSorteados(List<int> listaNumerosSorteados)
         {
             FillNumbersInPanel(listaNumerosSorteados);
         }
 
-        public void GetUltimoConcursoSorteado()
+        private void GetUltimoConcursoSorteado()
         {
             int numeroConcurso = new ConcursoDAO().GetNumeroUltimoConcurso();
             FillNumerosSorteados(new ConcursoDAO().GetResultadoConcursoByNumeroConcurso(numeroConcurso));
@@ -54,7 +54,7 @@ namespace LotoFacilRobot.UI
             cboConcursos.SelectedIndex = cboConcursos.Items.Count - 1;
         }
 
-        public void FillNumbersInPanel(List<int> numeros)
+        private void FillNumbersInPanel(List<int> numeros)
         {
             SetAllLabelToWhite();
             foreach (int n in numeros)
@@ -74,7 +74,7 @@ namespace LotoFacilRobot.UI
 
         }
 
-        public void SetAllLabelToWhite()
+        private void SetAllLabelToWhite()
         {
             foreach (Control ctrl in groupBox2.Controls)
             {
@@ -85,7 +85,7 @@ namespace LotoFacilRobot.UI
             }
         }
 
-        public void CalculaQuantidadeAcertos(List<int> numerosFavoritos,int numeroConcurso)
+        private void CalculaQuantidadeAcertos(List<int> numerosFavoritos,int numeroConcurso)
         {
             List<int> listaResultadoConcurso = new ConcursoDAO().GetResultadoConcursoByNumeroConcurso(numeroConcurso);
             int quantidadeAcertos = 0;
@@ -100,9 +100,9 @@ namespace LotoFacilRobot.UI
                 }
             }
             lblQuantidadeAcertos.Text = string.Empty;
-            lblQuantidadeAcertos.Text = "Você acertou: " + quantidadeAcertos.ToString();
+            lblQuantidadeAcertos.Text = String.Format("Você acertou: {0}", quantidadeAcertos.ToString());
             strNumerosAcertos.Remove(strNumerosAcertos.Length - 1, 1);
-            lblNumerosSorteados.Text = "Números acertados: " + strNumerosAcertos;
+            lblNumerosSorteados.Text = String.Format("Números acertados: {0}", strNumerosAcertos.ToString());
         }
 
         private void cboConcursos_SelectedValueChanged(object sender, EventArgs e)

@@ -42,6 +42,7 @@
             this.cboFiltroPesquisa.Name = "cboFiltroPesquisa";
             this.cboFiltroPesquisa.Size = new System.Drawing.Size(182, 21);
             this.cboFiltroPesquisa.TabIndex = 0;
+            this.cboFiltroPesquisa.SelectionChangeCommitted += new System.EventHandler(this.cboFiltroPesquisa_SelectionChangeCommitted);
             // 
             // dgvEstatistica
             // 

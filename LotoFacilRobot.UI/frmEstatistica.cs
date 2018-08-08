@@ -84,6 +84,8 @@ namespace LotoFacilRobot.UI
 
         private void CalculateAmountHint()
         {
+            numerosSorteados = new Dictionary<int,int>();
+            InitializeDictionary();
             List<Concurso> listaConcurso = new ConcursoDAO().GetAll();
 
             foreach (Concurso concurso in listaConcurso)
@@ -106,8 +108,8 @@ namespace LotoFacilRobot.UI
 
         private void PopulateByNumerosMaisSorteados()
         {
+            ClearGridViewColumnsAndRows();
             CalculateAmountHint();
-
             dgvEstatistica.ColumnCount = 2;
             dgvEstatistica.Columns[0].Name = "Número";
             dgvEstatistica.Columns[1].Name = "Quantidade de vezes em que foi sorteado";
@@ -128,6 +130,8 @@ namespace LotoFacilRobot.UI
 
         private void PopulateRankingAcertos()
         {
+            ClearGridViewColumnsAndRows();
+            CalculateAmountHint();
             List<Concurso> listaConcurso = new ConcursoDAO().GetAll();
             ObterListaNumerosFavoritos();
             int quantidadeAcertos = 0;
@@ -158,6 +162,12 @@ namespace LotoFacilRobot.UI
             }
 
             this.dgvEstatistica.Sort(this.dgvEstatistica.Columns["Quantidade de acertos"], ListSortDirection.Descending);
+        }
+
+        private void ClearGridViewColumnsAndRows()
+        {
+            dgvEstatistica.Columns.Clear();
+            dgvEstatistica.Rows.Clear();
         }
 
         #endregion

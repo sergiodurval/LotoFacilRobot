@@ -214,5 +214,41 @@ namespace LotoFacilRobot.Database
                 throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
             }
         }
+
+        public List<Concurso> GetConcursoPorPeriodo(DateTime dataInicial, DateTime dataFinal)
+        {
+            List<Concurso> listaConcurso = new List<Concurso>();
+            try
+            {
+                using (conn = new SqlConnection(strConnection))
+                {
+                    SqlCommand command = new SqlCommand("PR_GET_CONCURSO_BY_PERIODO", conn);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@DataInicio",dataInicial.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                    command.Parameters.AddWithValue("@DataFim", dataFinal.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                    conn.Open();
+                    SqlDataReader dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Concurso concurso = new Concurso();
+                        concurso.IdConcurso = Convert.ToInt32(dr["IdConcurso"]);
+                        concurso.NumeroConcurso = Convert.ToInt32(dr["NumeroConcurso"]);
+                        concurso.NumerosSorteados = PopulateNumerosSorteados(dr["NumerosSorteados"].ToString());
+                        concurso.PremioEstimado = Convert.ToDouble(dr["PremioEstimado"]);
+                        concurso.ProximoConcurso = Convert.ToDateTime(dr["ProximoConcurso"]);
+                        concurso.DataResultado = Convert.ToDateTime(dr["DataResultado"]);
+                        listaConcurso.Add(concurso);
+                    }
+                    conn.Close();
+                    command.Dispose();
+                    return listaConcurso;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
+            }
+        }
     }
 }

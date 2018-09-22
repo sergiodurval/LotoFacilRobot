@@ -48,18 +48,34 @@ namespace LotoFacilRobot.UI
             switch (pesquisa)
             {
                 case FiltroPesquisa.NumerosMaisSorteados:
+                    EsconderControles();
                     PopulateByNumerosMaisSorteados();
                     break;
 
                 case FiltroPesquisa.FiltroPorPeriodo:
+                    ExibirControles();
+                    PopulateFiltroPesquisa();
                     break;
 
                 case FiltroPesquisa.RankingAcertos:
+                    EsconderControles();
                     PopulateRankingAcertos();
                     break;
 
                 default:
                     break;
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(dtpInicio.Text) && !String.IsNullOrEmpty(dtpFim.Text))
+            {
+                PopulateFiltroPeriodo(Convert.ToDateTime(dtpInicio.Text), Convert.ToDateTime(dtpFim.Text));
+            }
+            else
+            {
+                MessageBox.Show("Informe o periodo desejado");
             }
         }
 
@@ -128,16 +144,16 @@ namespace LotoFacilRobot.UI
         }
 
 
-        private void PopulateRankingAcertos()
+        private void PopulateRankingAcertos(List<Concurso> listaConcurso = null , bool ordenarPorData = false)
         {
             ClearGridViewColumnsAndRows();
             CalculateAmountHint();
-            List<Concurso> listaConcurso = new ConcursoDAO().GetAll();
+            List<Concurso> ListaConcurso = listaConcurso == null ? new ConcursoDAO().GetAll() : listaConcurso;
             ObterListaNumerosFavoritos();
             int quantidadeAcertos = 0;
             Dictionary<int, int> rankingAcertos = new Dictionary<int, int>();
 
-            foreach(Concurso concurso in listaConcurso)
+            foreach(Concurso concurso in ListaConcurso)
             {
                 rankingAcertos.Add(concurso.NumeroConcurso, 0);
                 List<int> listaResultadoConcurso = new ConcursoDAO().GetResultadoConcursoByNumeroConcurso(concurso.NumeroConcurso);
@@ -162,7 +178,21 @@ namespace LotoFacilRobot.UI
                 dgvEstatistica.Rows.Add(numero.Key, numero.Value,new ConcursoDAO().GetDataResultadoConcurso(numero.Key).ToShortDateString());
             }
 
-            this.dgvEstatistica.Sort(this.dgvEstatistica.Columns["Quantidade de acertos"], ListSortDirection.Descending);
+            if (ordenarPorData == true)
+            {
+                this.dgvEstatistica.Sort(this.dgvEstatistica.Columns["Data Resultado"], ListSortDirection.Ascending);    
+            }
+            else
+            {
+                this.dgvEstatistica.Sort(this.dgvEstatistica.Columns["Quantidade de acertos"], ListSortDirection.Descending);
+            }
+            
+        }
+
+        private void PopulateFiltroPeriodo(DateTime dataInicial,DateTime dataFinal)
+        {
+            List<Concurso> listaConcurso = new ConcursoDAO().GetConcursoPorPeriodo(dataInicial, dataFinal);
+            PopulateRankingAcertos(listaConcurso,true);
         }
 
         private void ClearGridViewColumnsAndRows()
@@ -171,7 +201,27 @@ namespace LotoFacilRobot.UI
             dgvEstatistica.Rows.Clear();
         }
 
+        private void ExibirControles()
+        {
+            lblDataInicio.Visible = true;
+            lblDataFim.Visible = true;
+            dtpInicio.Visible = true;
+            dtpFim.Visible = true;
+            btnPesquisar.Visible = true;
+        }
+
+        private void EsconderControles()
+        {
+            lblDataInicio.Visible = false;
+            lblDataFim.Visible = false;
+            dtpInicio.Visible = false;
+            dtpFim.Visible = false;
+            btnPesquisar.Visible = false;
+        }
+
         #endregion
+
+       
 
         
 

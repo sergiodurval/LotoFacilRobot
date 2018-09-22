@@ -39,6 +39,7 @@ namespace LotoFacilRobot.UI
         private void frmEstatistica_Load(object sender, EventArgs e)
         {
             PopulateFiltroPesquisa();
+            PopulateByNumerosMaisSorteados();
         }
 
         private void cboFiltroPesquisa_SelectionChangeCommitted(object sender, EventArgs e)

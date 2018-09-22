@@ -186,5 +186,33 @@ namespace LotoFacilRobot.Database
                 throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
             }
         }
+
+        public DateTime GetDataResultadoConcurso(int numeroConcurso)
+        {
+            DateTime dataResultado = new DateTime();
+            try
+            {
+                using (conn = new SqlConnection(strConnection))
+                {
+                    SqlCommand command = new SqlCommand("PR_GET_DATARESULTADO_BY_NUMEROCONCURSO", conn);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@NumeroConcurso", numeroConcurso);
+                    conn.Open();
+                    SqlDataReader dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        dataResultado = Convert.ToDateTime(dr["DataResultado"]);
+                    }
+                    conn.Close();
+                    command.Dispose();
+                    return dataResultado;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception("Ocorreu o seguinte erro: " + ex.Message);
+            }
+        }
     }
 }

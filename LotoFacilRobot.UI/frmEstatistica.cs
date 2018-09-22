@@ -152,13 +152,14 @@ namespace LotoFacilRobot.UI
                 quantidadeAcertos = 0;
             }
 
-            dgvEstatistica.ColumnCount = 2;
+            dgvEstatistica.ColumnCount = 3;
             dgvEstatistica.Columns[0].Name = "Concurso";
             dgvEstatistica.Columns[1].Name = "Quantidade de acertos";
+            dgvEstatistica.Columns[2].Name = "Data Resultado";
 
             foreach(KeyValuePair<int,int> numero in rankingAcertos)
             {
-                dgvEstatistica.Rows.Add(numero.Key, numero.Value);
+                dgvEstatistica.Rows.Add(numero.Key, numero.Value,new ConcursoDAO().GetDataResultadoConcurso(numero.Key).ToShortDateString());
             }
 
             this.dgvEstatistica.Sort(this.dgvEstatistica.Columns["Quantidade de acertos"], ListSortDirection.Descending);

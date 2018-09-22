@@ -33,10 +33,7 @@ namespace LotoFacilRobot.Extractor
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         /// <summary>

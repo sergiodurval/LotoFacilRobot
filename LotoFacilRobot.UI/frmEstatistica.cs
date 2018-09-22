@@ -55,7 +55,7 @@ namespace LotoFacilRobot.UI
 
                 case FiltroPesquisa.FiltroPorPeriodo:
                     ExibirControles();
-                    PopulateFiltroPesquisa();
+                    ClearGridViewColumnsAndRows();
                     break;
 
                 case FiltroPesquisa.RankingAcertos:
@@ -71,7 +71,12 @@ namespace LotoFacilRobot.UI
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(dtpInicio.Text) && !String.IsNullOrEmpty(dtpFim.Text))
-            {
+            {   
+                if(Convert.ToDateTime(dtpFim.Text) < Convert.ToDateTime(dtpInicio.Text))
+                {
+                    MessageBox.Show("Data final menor que data inicial");
+                    return;
+                }
                 PopulateFiltroPeriodo(Convert.ToDateTime(dtpInicio.Text), Convert.ToDateTime(dtpFim.Text));
             }
             else
